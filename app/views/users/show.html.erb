@@ -1,2 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="">
+  <div class="mypage-header">
+    <%= image_tag @user.back_img.url, class:'back_img' %>
+    <div class="header-contents">
+      <%= image_tag @user.profile_img.url, :size =>'320x480', class:'profile_img' %>
+      <div class="header-sentence pl-4 ml-3"  style="padding-top: 17px;">
+        <h4><%= @user.name %></h4>
+        <p><%== @user.profile.gsub(/\r\n|\r|\n/, "<br>") %></p>
+      </div>
+    </div>
+  </div>
+  <div class="mypage-select">
+    
+  </div>
+  <div class="mypage-contents">
+    
+  </div>
+</div>
