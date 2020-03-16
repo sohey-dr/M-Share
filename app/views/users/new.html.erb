@@ -1,10 +1,10 @@
-<div class="signup">
-  <div class="text-center">
+<div class="outline">
+  <div class="text-center mb-5">
     <h1>新規会員登録</h1>
   </div>
   
-  <div class="row">
-    <div class="col-sm-6 offset-sm-3">
+  <div class="">
+    <div class="">
   
       <%= form_with(model: @user, local: true) do |f| %>
         
@@ -45,7 +45,7 @@
           <%= f.text_area :profile, class: 'form-control' %>
         </div>
   
-        <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+        <%= f.submit '新規登録', class: 'btn btn-pri btn-block mt-5' %>
       <% end %>
     </div>
   </div>

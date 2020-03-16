@@ -36,3 +36,32 @@ header{
   font-size: 38px;
   font-weight: 400;
 }
+.button{
+  display: block;
+	position: relative;
+	width: 600px;
+	padding: 11px;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+  border-radius: 30px;
+	border:1px solid #1B1B1B;
+	margin: auto;
+}
+.btn-sign{
+  background-color: #353535;
+  border: 0;
+  color: white;
+}
+.outline{
+  border: 2px solid #353535;
+  width: 50%;
+  margin: 80px auto;
+  padding: 50px 100px;
+  border-radius: 8px;
+}
+.btn-pri{
+  background-color: #353535;
+  color: white;
+}
