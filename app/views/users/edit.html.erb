@@ -1,0 +1,52 @@
+<div class="outline">
+  <div class="text-center mb-5">
+    <h1>プロフィール編集</h1>
+  </div>
+  
+  <div class="">
+    <div class="">
+  
+      <%= form_with(model: @user, local: true) do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :name, 'ニックネーム' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+  
+        <div class="form-group">
+          <%= f.label :email, 'メールアドレス' %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+  
+        <div class="form-group">
+          <%= f.label :password, 'パスワード' %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+  
+        <div class="form-group">
+          <%= f.label :password_confirmation, 'パスワード(確認)' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <p style="margin-top: 0; margin-bottom: 0;">
+          <%=f.label :profile_img,"ユーザー画像" %></p>
+          <%= f.file_field :profile_img %>
+        </div>
+        
+        <div class="form-group">
+          <p style="margin-top: 0; margin-bottom: 0;">
+          <%=f.label :back_img,"プロフィールバック画像" %></p>
+          <%= f.file_field :back_img %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :profile, '自己紹介文' %>
+          <%= f.text_area :profile, class: 'form-control' %>
+        </div>
+  
+        <%= f.submit '更新', class: 'btn btn-pri btn-block mt-5' %>
+      <% end %>
+    </div>
+  </div>
+</div>

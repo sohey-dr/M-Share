@@ -2,10 +2,15 @@
   <div class="mypage-header">
     <%= image_tag @user.back_img.url, class:'back_img' %>
     <div class="header-contents">
-      <%= image_tag @user.profile_img.url, :size =>'320x480', class:'profile_img' %>
+      <div class="">
+        <%= image_tag @user.profile_img.url, :size =>'320x480', class:'profile_img' %>
+      </div>
       <div class="header-sentence pl-4 ml-3"  style="padding-top: 17px;">
         <h4><%= @user.name %></h4>
         <p><%== @user.profile.gsub(/\r\n|\r|\n/, "<br>") %></p>
+      </div>
+      <div>
+        <%= render 'relationships/follow_button', user: @user %>
       </div>
     </div>
   </div>

@@ -1,0 +1,18 @@
+<div class="text-center">
+  <h1>シェア新規投稿ページ</h1>
+  
+  <%= form_with(model: @share, local: true) do |f| %>
+    <%= f.label :music_name, 'メッセージ' %>
+    <%= f.text_field :music_name %>
+    
+    <%= f.label :artist_name, 'メッセージ' %>
+    <%= f.text_field :artist_name %>
+    
+    <%=f.label :img,"写真" %></p>
+    <%= f.file_field :img %>
+  
+    <%= f.submit '投稿' %>
+  <% end %>
+  
+  <%= link_to '一覧に戻る', root_path %>
+</div>

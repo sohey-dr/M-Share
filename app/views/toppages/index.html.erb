@@ -1,5 +1,23 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<div class="row mt-5">
+  <div class="col-9 text-center">
+    <h4>あなたの聴いている音楽を広めよう</h4>
+     <%= link_to 'シェア', new_share_path, class: 'btn btn-dark' %>
+  </div>
+  <div class="col-3 text-center">
+    <h4>シェアを探す</h4>
+  </div>
+  <div class="col-sm-9">
+    <%= render 'shares/shares', shares: @shares %>
+  </div>
+</div>
+
+  
+  
+  
+  
+  
+  
 <% else %>
   <div class="center">
     <%= image_tag 'toppage.jpg', style:"width:100%" %>

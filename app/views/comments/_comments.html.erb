@@ -1,0 +1,23 @@
+<div class="comment-wrapper border-top　mb-10">
+  <p class="mt-5">コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <% unless c.user.blank? %>
+        <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.profile_img.url, class:"rounded-circle comment_image mr-3 mb-3"%></a>
+        <% end %>
+      <%= c.user.name unless c.user.blank? %>
+      <br />
+      <%= c.content %>
+    </div>
+    <br />
+  <% end %>
+  <% if logged_in? %>
+    <%= form_with(model: [@share, @comment], local: true) do |f| %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+      <%= f.hidden_field :share_id, value: @share.id %>
+      <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
