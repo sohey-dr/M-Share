@@ -1,3 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage-select ul{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+.mypage-select li{
+    list-style: none;
+    margin: 27px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.active{
+  border-bottom: 1px solid #353535;
+  padding-bottom: 10px;
+}

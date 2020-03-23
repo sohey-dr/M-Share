@@ -1,0 +1,26 @@
+<div class="outline">
+  <div class="text-center mb-5">
+    <h1>好きなアーティスト登録</h1>
+  </div>
+  
+  <div class="">
+    <div class="">
+  
+      <%= form_with(model: @like, local: true) do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :like_artist, 'アーティスト名' %>
+          <%= f.text_field :like_artist, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <p style="margin-top: 0; margin-bottom: 0;">
+          <%=f.label :img,"画像" %></p>
+          <%= f.file_field :img %>
+        </div>
+        
+        <%= f.submit '登録', class: 'btn btn-pri btn-block mt-5' %>
+      <% end %>
+    </div>
+  </div>
+</div>

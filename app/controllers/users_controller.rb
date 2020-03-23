@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @likes = @user.likes.order(id: :desc).page(params[:page]).per(25)
   end
   
   def edit
@@ -41,6 +42,26 @@ class UsersController < ApplicationController
     else
         redirect_to root_url
     end
+  end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+  end
+  
+  def shares
+    @user = User.find(params[:id])
+    @shares = @user.shares.order(id: :desc).page(params[:page])
+  end
+  
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.favos.page(params[:page])
   end
 
   private

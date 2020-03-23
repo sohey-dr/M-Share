@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   
-  get 'microposts/create'
-  get 'microposts/destroy'
-  get 'relationships/create'
-  get 'relationships/destroy'
+  get 'favorites/create'
+  get 'favorites/destroy'
   root to: 'toppages#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :new, :create, :edit] do
+  resources :users, only: [:show, :new, :create, :edit, :update] do
     member do
       get :followings
       get :followers
+      get :shares
+      get :favorites
     end
   end
   
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   resources :shares, only: [:new ,:create, :destroy, :show] do
     resources :comments, only: [:create ,:destroy]
+    resources :favorites, only: [:create ,:destroy]
   end
   
   resources :relationships, only: [:create, :destroy]
