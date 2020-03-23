@@ -49,4 +49,8 @@ class User < ApplicationRecord
     self.favos.include?(other_share)
   end
   
+  def feed_shares
+    Share.where(user_id: self.following_ids + [self.id])
+  end
+  
 end

@@ -8,7 +8,7 @@ class SharesController < ApplicationController
       flash[:success] = 'シェアを投稿しました。'
       redirect_to root_url
     else
-      @shares = current_user.shares.order(id: :desc).page(params[:page])
+      @shares = current_user.feed_shares.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'シェアの投稿に失敗しました。'
       render 'toppages/index'
     end
@@ -17,7 +17,7 @@ class SharesController < ApplicationController
   def destroy
     @share.destroy
     flash[:success] = 'シェアを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
 
   def show
@@ -29,6 +29,9 @@ class SharesController < ApplicationController
   def new
     @share = Share.new
   end
+  
+  
+  private
   
   def share_params
     params.require(:share).permit(:music_name, :artist_name, :img)
