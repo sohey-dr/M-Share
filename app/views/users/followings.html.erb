@@ -22,7 +22,7 @@
     <li><%= link_to 'フォロワー', followers_user_path(@user), class:'' %></li>
   </ul>
 </div>
-<div class="line mb-4"></div>
+<div class="line"></div>
 <div class="mypage-contents">
-  <%= render 'users', users: @followings %>
+  <%= render 'follows', users: @followings %>
 </div>

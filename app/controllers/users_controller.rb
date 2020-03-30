@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:edit, :show]
+  before_action :correct_user, only: [:edit]
 
   def show
     @user = User.find(params[:id])
@@ -55,11 +56,13 @@ class UsersController < ApplicationController
   end
   
   def shares
+    @users = User.limit(25).order(id: :desc).where.not(id: current_user.id).page(params[:page]).per(25)
     @user = User.find(params[:id])
     @shares = @user.shares.order(id: :desc).page(params[:page])
   end
   
   def favorites
+    @users = User.limit(25).order(id: :desc).where.not(id: current_user.id).page(params[:page]).per(25)
     @user = User.find(params[:id])
     @favorites = @user.favos.page(params[:page])
   end
@@ -68,5 +71,10 @@ class UsersController < ApplicationController
   
   def user_params
   params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_img, :back_img, :profile )
+  end
+  
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user == @user
   end
 end

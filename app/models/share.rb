@@ -6,4 +6,5 @@ class Share < ApplicationRecord
   mount_uploader :img, ImageUploader
   
   has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'share_id', dependent: :destroy
+  has_many :favoes, through: :reverses_of_favorite, source: :user, dependent: :destroy
 end

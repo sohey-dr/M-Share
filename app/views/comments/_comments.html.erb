@@ -1,15 +1,23 @@
-<div class="comment-wrapper border-top　mb-10">
-  <p class="mt-5">コメント一覧</p>
+<div class="comment-wrapper border-top">
   <% @comments.each do |c| %>
-    <div>
-      <% unless c.user.blank? %>
-        <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.profile_img.url, class:"rounded-circle comment_image mr-3 mb-3"%></a>
+    <div class="comment">
+      <div>
+        <% if c.user.profile_img? %>
+         <%= link_to user_path(c.user) do %>
+          <%= image_tag c.user.profile_img.url, class:'comment_image mr-3' %>
+         <% end %>
+        <% else %>
+         <%= link_to user_path(c.user) do %>
+          <%= image_tag 'music.png', class:'comment_image mr-3' %>
+         <% end %>
         <% end %>
-      <%= c.user.name unless c.user.blank? %>
-      <br />
-      <%= c.content %>
+      </div>
+      <div>
+        <p class="comment-name"><%= c.user.name %></p>
+        <p class="comment-content"><%= c.content %></p>
+      </div>
     </div>
-    <br />
+    <div class="line"></div>
   <% end %>
   <% if logged_in? %>
     <%= form_with(model: [@share, @comment], local: true) do |f| %>

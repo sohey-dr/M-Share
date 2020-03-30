@@ -1,0 +1,38 @@
+<% if users.any? %>
+  <ul class="list-unstyled">
+    <% users.each do |user| %>
+    <div class="line"></div>
+      <li class="follow">
+        <% if user.profile_img? %>
+         <%= link_to user_path(user) do %>
+          <%= image_tag user.profile_img.url, class:'follow-img' %>
+         <% end %>
+        <% else %>
+         <%= link_to user_path(user) do %>
+          <%= image_tag 'music.png', class:'follow-img' %>
+         <% end %>
+        <% end %>
+        <div class="follow-body">
+          <p class="follow-name"><%= user.name %></p>
+          <p class="follow-profile"><%== user.profile.gsub(/\r\n|\r|\n/, "<br>") %></p>
+        </div>
+        <div class="mt-2">
+          <% unless current_user == user %>
+            <% if current_user.following?(user) %>
+              <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), local: true, method: :delete) do |f| %>
+                <%= hidden_field_tag :follow_id, user.id %>
+                <%= f.submit 'フォロー解除', class: 'btn u-button-unfollow btn-block' %>
+              <% end %>
+            <% else %>
+              <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
+                <%= hidden_field_tag :follow_id, user.id %>
+                <%= f.submit 'フォロー', class: 'btn u-button-follow btn-block' %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate users %>
+<% end %>

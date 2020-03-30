@@ -1,15 +1,121 @@
 // Place all the styles related to the shares controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.comment_image{
-  width: 100px;
-  height: 100px;
+.fav{
+  font-size: 20px;
+  margin: auto 0;
 }
 .fa-trash-alt{
   color: #353535;
-  font-size: 23px;
 }
 .fa-heart{
   color: red;
-  font-size: 23px;
+}
+.facebook{
+  color: #741e83;
+}
+.user-name{
+  margin-left: 82px;
+  font-size: 21px;
+}
+.list-unstyled .line:nth-of-type(1){
+  display: none;
+}
+.profile_img2{
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  margin-top: 25px;
+}
+.media{
+  margin:32px auto;
+}
+.media-body{
+  margin-left: 150px;
+}
+.media a{
+  margin-left: 39px;
+  font-size: 25px;
+  color: #343a40;
+}
+.card {
+  width: 440px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  position: relative;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 190px;
+  height: 190px;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 25px;
+  text-align: center;
+}
+.card a{
+  position: absolute;
+  top: -3px;
+  left: -259px;
+  width: 201%;
+  height: 103%;
+}
+.list-unstyled{
+  width: 100%;
+  margin: auto;
+  display: grid;
+}
+.share-left{
+  display: flex;
+  flex-direction: column;
+}
+.card-body a{
+  font-size: 10px;
+}
+// show.html.erb
+.in-line{
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 135px;
+}
+.show-all{
+  width: 84%;
+  margin: auto;
+}
+.profile_img4{
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+.show-name{
+  font-size: 25px;
+  margin-left: 20px;
+  display: inline;
+}
+.show-top{
+  margin: 50px 109px 39px;
+}
+.show-img{
+  width: 400px;
+  height: 400px;
+  margin: 30px 110px;
+}
+.show-contents{
+  display: flex;
+}
+.show-contents p{
+  margin: 96px;
+  font-size: 50px;
 }

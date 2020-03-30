@@ -25,4 +25,11 @@
 <div class="line mb-4"></div>
 <div class="mypage-contents">
   <%= render 'likes/likes' , likes: @likes%>
+  <% if current_user == @user %>
+    <div class="row mt-5 mb-5">
+      <div class="text-center offset-4 col-4">
+        <%= link_to '新規登録', new_like_path, class: 'btn btn-dark btn-block' %>
+      </div>
+    </div>
+  <% end %>
 </div>

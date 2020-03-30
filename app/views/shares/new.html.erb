@@ -3,7 +3,10 @@
     <h1>シェア新規投稿ページ</h1>
     
     <%= form_with(model: @share, local: true) do |f| %>
-    
+    <div style="
+    width: 200px;
+    /* text-align: center; */
+    margin: 25px auto;">
     <div class="form-group">
       <%= f.label :music_name, '曲名' %>
       <%= f.text_field :music_name %>
@@ -23,6 +26,8 @@
       <%= f.submit '投稿' %>
     <% end %>
     </div>
+    </div>
     <%= link_to '一覧に戻る', root_path %>
+    
   </div>
 </div>

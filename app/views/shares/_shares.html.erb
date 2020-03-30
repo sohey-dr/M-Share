@@ -3,8 +3,10 @@
   <div class="line"></div>
     <li class="media mb-3">
       <div class="share-left">
-      <%= image_tag share.user.profile_img.url, :size =>'320x480', class:'profile_img2' %>
-      <%= link_to share.user.name, user_path(share.user) , class:"user-name" %>
+      <%= link_to user_path(share.user) do %>
+        <%= image_tag share.user.profile_img.url, :size =>'320x480', class:'profile_img2' %>
+      <% end %>
+        <p class="user-name"><%=  share.user.name %></p>
       </div>
       <div class="media-body">
         <div>

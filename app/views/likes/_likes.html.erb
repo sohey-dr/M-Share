@@ -1,4 +1,5 @@
 <div class="row text-center">
+  <h2 class="col-12">好きなアーティスト</h2>
   <% likes.each do |like| %>
   <div class="col-4">
     <% if like.img? %>
@@ -16,9 +17,4 @@
     
   </div>
   <% end %>
-</div>
-<div class="row mt-5 mb-5">
-  <div class="text-center offset-4 col-4">
-    <%= link_to '新規登録', new_like_path, class: 'btn btn-dark btn-block' %>
-  </div>
 </div>

@@ -10,7 +10,7 @@ class SharesController < ApplicationController
     else
       @shares = current_user.feed_shares.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'シェアの投稿に失敗しました。'
-      render 'toppages/index'
+      render 'shares/new'
     end
   end
 
@@ -24,6 +24,7 @@ class SharesController < ApplicationController
     @share = Share.find(params[:id])
     @comments = @share.comments
     @comment = Comment.new
+    counts(@share)
   end
   
   def new

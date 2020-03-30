@@ -1,14 +1,25 @@
 <% if logged_in? %>
 <div class="row mt-5">
-  <div class="col-9 text-center">
+  <div class="col-9 text-center mb-5">
     <h4>あなたの聴いている音楽を広めよう</h4>
      <%= link_to 'シェア', new_share_path, class: 'btn btn-dark' %>
   </div>
-  <div class="col-3 text-center">
-    <h4>シェアを探す</h4>
+  <div class="col-3 text-center mb-5">
+    <h4>アーティスト名で探す</h4>
+    <%= form_with url: root_path, method: :get, local: true do |f| %>
+      <%= f.text_field :artist_name %>
+      <%= f.submit :search %>
+    <% end %>
   </div>
+  <div class="line"></div>
   <div class="col-sm-9">
     <%= render 'shares/shares', shares: @shares %>
+  </div>
+  <div class="col-sm-3 side-line">
+    <h5 class="text-center mt-3 mb-3">Youtubeで音楽を探す</h5>
+    <a href="https://www.youtube.com" target="_blank"><%= image_tag 'youtube_social_icon_red.png', style:"width: 50%;margin: 0 92px;" %></a>
+   <iframe width="100%"  src="https://www.youtube.com/embed/SX_ViT4Ra7k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="100%" src="https://www.youtube.com/embed/ony539T074w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 

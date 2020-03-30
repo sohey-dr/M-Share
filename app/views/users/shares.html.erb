@@ -13,15 +13,24 @@
     </div>
   </div>
 </div>
-<div class="mypage-select">
-  <ul>
-    <li><%= link_to '好きなアーティスト', user_path(@user), class:'' %></li>
-    <li><%= link_to 'シェア', shares_user_path(@user), class:'active' %></li>
-    <li><%= link_to 'いいね', favorites_user_path(@user), class:'' %></li>
-    <li><%= link_to 'フォロー中', followings_user_path(@user), class:'' %></li>
-    <li><%= link_to 'フォロワー', followers_user_path(@user), class:'' %></li>
-  </ul>
-</div>
-<div class="mypage-contents">
-  <%= render 'shares/shares' , shares: @shares %>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="mypage-select">
+      <ul>
+        <li><%= link_to '好きなアーティスト', user_path(@user), class:'' %></li>
+        <li><%= link_to 'シェア', shares_user_path(@user), class:'active' %></li>
+        <li><%= link_to 'いいね', favorites_user_path(@user), class:'' %></li>
+        <li><%= link_to 'フォロー中', followings_user_path(@user), class:'' %></li>
+        <li><%= link_to 'フォロワー', followers_user_path(@user), class:'' %></li>
+      </ul>
+    </div>
+    <div class="line"></div>
+    <div class="mypage-contents">
+      <%= render 'shares/shares' , shares: @shares %>
+    </div>
+  </div>
+  <div class="col-sm-3 side-line">
+    <h3 class="text-center pt-4 pb-4">おすすめユーザー</h3>
+    <%= render 'users', users: @users %>
+  </div>
 </div>
