@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'carrierwave'
 gem 'devise'
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false #追記

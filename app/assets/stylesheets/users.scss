@@ -17,6 +17,29 @@
   border-bottom: 1px solid #353535;
   padding-bottom: 10px;
 }
+// show.html.erb
+.back_img{
+  height: 350px;
+  width: 100%;
+  filter: blur(4px) contrast(50%);
+}
+.mypage-header{
+  position: relative;
+  overflow: hidden;
+}
+.header-contents{
+  position: absolute;
+  top: 90px;
+  display: flex;
+  color: #fff;
+}
+.header-sentence h4{
+  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+
 .info-top{
   margin: 0 42px;
 }
@@ -40,18 +63,23 @@
 }
 .follow{
   display: flex;
-  margin: 8px 320px;
+  margin: auto;
 }
 .follow-img{
-  width: 150px;
-  height: 150px;
   border-radius: 50%;
 }
 .follow-body{
-  margin: 6px 100px;
+  width: 30%;
 }
 .follow-name{
   font-size: 34px;
+}
+.follow-profile{
+  white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+  overflow: hidden; /* ハミ出した部分を隠す */
+  text-overflow: ellipsis; /* 「…」と省略 */
+  -webkit-text-overflow: ellipsis; /* Safari */
+  -o-text-overflow: ellipsis; /* Opera */
 }
 .u-button-unfollow{
   border: 1px solid #353535;

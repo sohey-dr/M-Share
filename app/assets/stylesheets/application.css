@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- 
 h3{
   margin-bottom: 0;
 }
@@ -56,4 +55,169 @@ nav a:hover{
   background-color: #35353536;
   width: 100%;
   height: 1px;
+}
+.navbar-nav .dropdown-menu {
+  position: absolute;
+}
+.outline{
+  border: 2px solid #353535;
+  margin: 80px auto;
+  padding: 50px 100px;
+  border-radius: 8px;
+}
+
+
+
+/*メディアエクエリ*/
+
+@media (min-width: 500px) {
+  /* ウインドウ幅500px以上の時に適用されるスタイル */
+  .card{
+    width: 193px;
+  }
+  .media-body {
+    margin-left: 74px;
+  }
+  /*Shares__new*/
+  .outline{
+  width: 79%;
+  }
+  .outline .h1{
+    font-size: 1.5rem;
+  }
+  /*share.show.html.erb*/
+  .in-line{
+  margin: 0 35px;
+  }
+  .show-top{
+  margin-bottom: 20px;
+  }
+  .show-img{
+    width: 100%;
+    height: 100%;
+  }
+  .show-contents{
+    flex-direction: column;
+  }
+  .comment {
+    margin: 7px 0;
+  }
+  /*users.show.html.erb*/
+  .header-contents{
+    left: 40px;
+  }
+  .mypage-select ul{
+    padding: 0 17px 0 0;
+  }
+  .mypage-select li{
+    font-size: 14px;
+  }
+  .like_artist {
+    width: 135px;
+    height: 135px;
+  }
+  /*user.follow.html.erb*/
+  .follow-body {
+    margin: 6px 33px;
+  }
+  .follow-profile{
+    width: 300px;
+  }
+  .follow a{
+    height: auto;
+    margin: auto 0;
+  }
+  .follow-img{
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (min-width: 750px) {
+  /* ウインドウ幅750px以上の時に適用されるスタイル */
+  .card{
+    width: 193px;
+  }
+  /*share.new*/
+  .outline .h1{
+    font-size: 2rem;
+  }
+  /*share.show.html.erb*/
+  .show-top{
+  margin-bottom: 20px;
+  }
+  .show-img{
+    width: 300px;
+    height: 300px;
+  }
+  .show-contents{
+    flex-direction: inherit;
+  }
+  /*users.show.html.erb*/
+  .header-contents{
+    left: 70px;
+  }
+  .mypage-select ul{
+    padding: 0 49px 0 0;
+  }
+  .mypage-select li{
+    font-size: 18px;
+  }
+  .follow {
+    margin: 8px 100px;
+  }
+  .follow-body {
+    margin: 6px 75px;
+  }
+  .like_artist {
+    width: 180px;
+    height: 180px;
+  }
+  .follow-img{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1000px) {
+  /* ウインドウ幅1000px以上の時に適用されるスタイル */
+  /*top*/
+  .card{
+    width: 430px
+  }
+  /*share.new*/
+  .outline .h1{
+    font-size: 2.5rem;
+  }
+  .outline{
+  width: 50%;
+  }
+  /*share.show.html.erb*/
+  .in-line{
+  margin: 0 135px;
+  }
+  .show-top{
+  margin: 50px 109px 39px;
+  }
+  .show-img{
+    width: 400px;
+    height: 400px;
+    margin: 30px 110px;
+  }
+  .comment {
+    margin: 7px 130px;
+  }
+  /*users.show.html.erb*/
+  .header-contents{
+    left: 110px;
+  }
+  .follow {
+    display: flex;
+    margin: 8px 320px;
+  }
+  .like_artist {
+    width: 220px;
+    height: 220px;
+  }
+  
 }

@@ -4,7 +4,11 @@
     <li class="media mb-3">
       <div class="share-left">
       <%= link_to user_path(share.user) do %>
-        <%= image_tag share.user.profile_img.url, :size =>'320x480', class:'profile_img2' %>
+        <% if share.user.profile_img? %>
+          <%= image_tag share.user.profile_img.url, :size =>'320x480', class:'profile_img2' %>
+        <% else %>
+          <%= image_tag 'music.png', :size =>'320x480', class:'profile_img2' %>
+        <% end %>
       <% end %>
         <p class="user-name"><%=  share.user.name %></p>
       </div>

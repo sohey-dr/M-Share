@@ -1,10 +1,10 @@
 <% if logged_in? %>
 <div class="row mt-5">
-  <div class="col-9 text-center mb-5">
+  <div class="col-12 col-lg-9 text-center mb-5">
     <h4>あなたの聴いている音楽を広めよう</h4>
      <%= link_to 'シェア', new_share_path, class: 'btn btn-dark' %>
   </div>
-  <div class="col-3 text-center mb-5">
+  <div class="col-12 col-lg-3 text-center mb-5">
     <h4>アーティスト名で探す</h4>
     <%= form_with url: root_path, method: :get, local: true do |f| %>
       <%= f.text_field :artist_name %>
@@ -12,12 +12,14 @@
     <% end %>
   </div>
   <div class="line"></div>
-  <div class="col-sm-9">
+  <div class="col-12 col-lg-9">
     <%= render 'shares/shares', shares: @shares %>
   </div>
-  <div class="col-sm-3 side-line">
+  <div class="col-12 col-lg-3 side-line">
     <h5 class="text-center mt-3 mb-3">Youtubeで音楽を探す</h5>
-    <a href="https://www.youtube.com" target="_blank"><%= image_tag 'youtube_social_icon_red.png', style:"width: 50%;margin: 0 92px;" %></a>
+    <div class="youtube">
+      <a href="https://www.youtube.com" target="_blank"><%= image_tag 'youtube_social_icon_red.png'%></a>
+    </div>
    <iframe width="100%"  src="https://www.youtube.com/embed/SX_ViT4Ra7k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    <iframe width="100%" src="https://www.youtube.com/embed/ony539T074w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
@@ -34,8 +36,8 @@
     <%= image_tag 'toppage.jpg', style:"width:100%" %>
   </div>
   
-  <div class="container text-center">
-    <div class="before-content">
+  <div class="before-content container text-center">
+    <div class="before-sentence">
       <h3>あなたの知らない素敵な<br>曲やアーティストを見つけにいこう</h3>
       <h3>あなたのおすすめの曲や<br>アーティストをみんなに薦めよう</h3>
     </div>

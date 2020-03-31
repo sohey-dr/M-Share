@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .before-content{
-  margin-top: 250px;
+  margin: 100px auto;
 }
-.before-content h3{
+.before-sentence{
+  margin-bottom: 70px;
+}
+.before-sentence h3{
   font-weight: 100;
 }
 header{
@@ -20,31 +23,10 @@ header{
   width: 60px;
   height: 60px;
 }
-.back_img{
-  height: 350px;
-  width: 100%;
-  filter: blur(4px) contrast(50%);
-}
-.mypage-header{
-  position: relative;
-  overflow: hidden;
-}
-.header-contents{
-  position: absolute;
-  top: 90px;
-  left: 110px;
-  display: flex;
-  color: #fff;
-}
-.header-sentence h4{
-  letter-spacing: 2px;
-  font-size: 38px;
-  font-weight: 400;
-}
 .button{
   display: block;
 	position: relative;
-	width: 600px;
+	width: 450px;
 	padding: 11px;
 	text-align: center;
 	text-decoration: none;
@@ -58,13 +40,6 @@ header{
   background-color: #353535;
   border: 0;
   color: white;
-}
-.outline{
-  border: 2px solid #353535;
-  width: 50%;
-  margin: 80px auto;
-  padding: 50px 100px;
-  border-radius: 8px;
 }
 .btn-pri{
   background-color: #353535;
@@ -80,6 +55,13 @@ header{
 }
 .side-line{
   border-left: solid 1px #35353536;
+}
+.youtube{
+  max-width: 50%;
+  margin: 0 auto;
+}
+.youtube img{
+  width: 100%;
 }
 .btn-link{
   width: 30%;
