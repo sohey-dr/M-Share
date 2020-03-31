@@ -7,8 +7,8 @@ if Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: 'AKIAJAZTCQLDWB6XIDIA',
-      aws_secret_access_key: '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',
+      aws_access_key_id: 'AKIAXOQMWY3IQN6BP7FR',
+      aws_secret_access_key: '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',
       region: 'us-east-1' 
     }
     config.fog_directory  = 'appmshare' # 作成したS3バケット名
