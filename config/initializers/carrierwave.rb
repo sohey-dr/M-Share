@@ -9,7 +9,7 @@ if Rails.env.production?
       provider: 'AWS',
       aws_access_key_id: 'AKIAJAZTCQLDWB6XIDIA',
       aws_secret_access_key: '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',
-      region: 'us-east-1'  # S3バケット作成時に指定したリージョン。左記は東京を指す
+      region: 'us-east-1' 
     }
     config.fog_directory  = 'appmshare' # 作成したS3バケット名
   end
