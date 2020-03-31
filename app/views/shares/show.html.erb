@@ -1,7 +1,11 @@
 <div class="show-all">
   <div class="show-top">
     <%= link_to user_path(@share.user) do %>
-      <%= image_tag @share.user.profile_img.url, class:'profile_img4' %>
+      <% if @share.user.profile_img? %>
+        <%= image_tag @share.user.profile_img.url, class:'profile_img4' %>
+      <% else %>
+        <%= image_tag 'profile.png', :size =>'320x480', class:'profile_img4' %>
+      <% end %>
     <% end %>
     <p class="show-name"><%= @share.user.name %></p>
   </div>  

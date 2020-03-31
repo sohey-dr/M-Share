@@ -1,8 +1,16 @@
 <div class="mypage-header">
-  <%= image_tag @user.back_img.url, class:'back_img' %>
+  <% if @user.back_img? %>
+    <%= image_tag @user.back_img.url, class:'back_img' %>
+  <% else %>
+    <%= image_tag 'elice-moore-E--AUpYXbjM-unsplash.jpg', :size =>'320x480', class:'back_img' %>
+  <% end %>
   <div class="header-contents">
     <div class="">
-      <%= image_tag @user.profile_img.url, :size =>'320x480', class:'profile_img' %>
+     <% if @user.profile_img? %>
+        <%= image_tag @user.profile_img.url, :size =>'320x480', class:'profile_img' %>
+      <% else %>
+        <%= image_tag 'profile.png', :size =>'320x480', class:'profile_img' %>
+      <% end %>
     </div>
     <div class="header-sentence pl-4 ml-3"  style="padding-top: 17px;">
       <h4><%= @user.name %></h4>

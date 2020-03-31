@@ -6,7 +6,13 @@
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= image_tag current_user.profile_img.url, class:'profile_img3' %></a>
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              <% if current_user.profile_img? %>
+                <%= image_tag current_user.profile_img.url, class:'profile_img3' %>
+              <% else %>
+                <%= image_tag 'profile.png', :size =>'320x480', class:'profile_img3' %>
+              <% end %>
+            </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'マイページ', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>

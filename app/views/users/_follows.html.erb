@@ -5,7 +5,11 @@
       <li class="follow">
         <% if user.profile_img? %>
          <%= link_to user_path(user) do %>
-          <%= image_tag user.profile_img.url, class:'follow-img' %>
+            <% if user.profile_img? %>
+              <%= image_tag user.profile_img.url, class:'follow-img' %>
+            <% else %>
+              <%= image_tag 'profile.png', :size =>'320x480', class:'profile_img2' %>
+            <% end %>
          <% end %>
         <% else %>
          <%= link_to user_path(user) do %>

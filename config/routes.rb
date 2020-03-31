@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   resources :likes, only: [:new ,:create, :destroy, :show]
   
   resources :shares, only: [:new ,:create, :destroy, :show] do
-    resources :comments, only: [:create ,:destroy]
+    resources :comments, only: [:create]
     resources :favorites, only: [:create ,:destroy]
   end
+  resources :comments, only: [:destroy]
   
   resources :relationships, only: [:create, :destroy]
 end

@@ -70,7 +70,7 @@ nav a:hover{
 
 /*メディアエクエリ*/
 
-@media (min-width: 500px) {
+@media (min-width: 400px) {
   /* ウインドウ幅500px以上の時に適用されるスタイル */
   .card{
     width: 193px;

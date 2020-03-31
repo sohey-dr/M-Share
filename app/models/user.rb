@@ -7,8 +7,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :profile, presence: true, length: { maximum: 300 }
   
-  validates :profile_img, presence: true
-  validates :back_img, presence: true
   mount_uploader :profile_img, ImageUploader
   mount_uploader :back_img, ImageUploader
   
