@@ -63,3 +63,4 @@ group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
 gem "actionview", ">= 5.2.4.2"
+gem 'rails-i18n'
