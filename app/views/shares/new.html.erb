@@ -1,33 +1,35 @@
-<div class="outline">
-  <div class="text-center">
-    <h1 class="h1">シェア新規投稿ページ</h1>
+<%= form_with(model: @share, local: true) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <div class="outline">
+    <div class="text-center">
+      <h1 class="h1">シェア新規投稿ページ</h1>
+      
+      <div style="
+      width: 200px;
+      /* text-align: center; */
+      margin: 25px auto;">
+      <div class="form-group">
+        <%= f.label :music_name, '曲名' %>
+        <%= f.text_field :music_name %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :artist_name, 'アーティスト名' %>
+        <%= f.text_field :artist_name %>
+      </div>
+      
+      <div class="form-group">
+        <%=f.label :img,"写真" %></p>
+        <%= f.file_field :img %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit '投稿' %>
     
-    <%= form_with(model: @share, local: true) do |f| %>
-    <div style="
-    width: 200px;
-    /* text-align: center; */
-    margin: 25px auto;">
-    <div class="form-group">
-      <%= f.label :music_name, '曲名' %>
-      <%= f.text_field :music_name %>
+      </div>
+      </div>
+      <%= link_to '一覧に戻る', root_path %>
+      
     </div>
-    
-    <div class="form-group">
-      <%= f.label :artist_name, 'アーティスト名' %>
-      <%= f.text_field :artist_name %>
-    </div>
-    
-    <div class="form-group">
-      <%=f.label :img,"写真" %></p>
-      <%= f.file_field :img %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.submit '投稿' %>
-    <% end %>
-    </div>
-    </div>
-    <%= link_to '一覧に戻る', root_path %>
-    
   </div>
-</div>
+<% end %>

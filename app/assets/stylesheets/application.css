@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+img{
+  object-fit: cover;
+}
 h3{
   margin-bottom: 0;
 }

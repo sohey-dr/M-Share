@@ -9,7 +9,6 @@ class SharesController < ApplicationController
       redirect_to root_url
     else
       @shares = current_user.feed_shares.order(id: :desc).page(params[:page])
-      flash.now[:danger] = 'シェアの投稿に失敗しました。'
       render 'shares/new'
     end
   end

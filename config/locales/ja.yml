@@ -5,3 +5,6 @@ ja:
               name: ニックネーム
               email: メールアドレス
               password: パスワード
+            share:
+              music_name: 曲名
+              artist_name: アーティスト名
