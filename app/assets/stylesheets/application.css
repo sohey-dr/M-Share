@@ -116,6 +116,10 @@ nav a:hover{
     width: 135px;
     height: 135px;
   }
+  .profile_img{
+  width: 125px;
+  height: 125px;
+  }
   /*user.follow.html.erb*/
   .follow-body {
     margin: 6px 33px;
@@ -152,6 +156,10 @@ nav a:hover{
   }
   .show-contents{
     flex-direction: inherit;
+  }
+  .profile_img{
+  width: 150px;
+  height: 150px;
   }
   /*users.show.html.erb*/
   .header-contents{
@@ -206,6 +214,10 @@ nav a:hover{
   }
   .comment {
     margin: 7px 130px;
+  }
+  .profile_img{
+  width: 170px;
+  height: 170px;
   }
   /*users.show.html.erb*/
   .header-contents{

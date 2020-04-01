@@ -3,12 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment{
     display: flex;
+    justify-content: space-between;
     margin: 7px 130px;
 }
 .comment_image{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+.comment-left{
+    display: flex;
+}
+.comment-right{
+    margin-top: 55px;
+}
+.comment-right a{
+    font-size: 30px;
 }
 .comment-name{
     font-size: 23px;
