@@ -75,8 +75,15 @@ nav a:hover{
 
 @media (min-width: 400px) {
   /* ウインドウ幅500px以上の時に適用されるスタイル */
+  .button-like{
+    width: 40%;
+  }
   .outline {
     padding: 50px 56px;
+    width: 86%;
+  }
+  .outline .h1{
+    font-size: 1.5rem;
   }
   .outline p{
     font-size: 14px;
@@ -89,13 +96,6 @@ nav a:hover{
   }
   .media-body {
     margin-left: 74px;
-  }
-  /*Shares__new*/
-  .outline{
-  width: 79%;
-  }
-  .outline .h1{
-    font-size: 1.5rem;
   }
   /*share.show.html.erb*/
   .in-line{
@@ -125,8 +125,8 @@ nav a:hover{
     font-size: 14px;
   }
   .like_artist {
-    width: 135px;
-    height: 135px;
+    width: 120px;
+    height: 120px;
   }
   .profile_img{
   width: 125px;
@@ -183,6 +183,9 @@ nav a:hover{
   height: 150px;
   }
   /*users.show.html.erb*/
+  .button-like{
+    width: 25%;
+  }
   .header-contents{
     left: 70px;
   }
