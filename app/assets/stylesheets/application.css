@@ -99,10 +99,10 @@ nav a:hover{
   }
   /*share.show.html.erb*/
   .in-line{
-  margin: 0 35px;
+    margin: 0 35px;
   }
   .show-top{
-  margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .show-img{
     width: 100%;
@@ -116,7 +116,7 @@ nav a:hover{
   }
   /*users.show.html.erb*/
   .header-contents{
-    left: 40px;
+    left: 0px;
   }
   .mypage-select ul{
     padding: 0 17px 0 0;
