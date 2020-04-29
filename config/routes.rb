@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :musics do
+    collection {get "search"}
+  end
+  
   resources :likes, only: [:new ,:create, :destroy, :show]
   
   resources :shares, only: [:new ,:create, :destroy, :show] do

@@ -64,3 +64,5 @@ group :production do
 end
 gem "actionview", ">= 5.2.4.2"
 gem 'rails-i18n'
+gem 'rspotify'
+gem 'dotenv-rails'

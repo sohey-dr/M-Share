@@ -8,7 +8,7 @@
     <h4>アーティスト名で探す</h4>
     <%= form_with url: root_path, method: :get, local: true do |f| %>
       <%= f.text_field :artist_name %>
-      <%= f.submit :search %>
+      <%= f.submit '検索', class:'button-search' %>
     <% end %>
   </div>
   <div class="line"></div>
@@ -16,6 +16,8 @@
     <%= render 'shares/shares', shares: @shares %>
   </div>
   <div class="col-12 col-lg-3 side-line">
+    <h5 class="text-center mt-3 mb-3">30秒だけ視聴する</h5>
+    <div class="text-center"><%= link_to '視聴する', search_musics_path, class: 'btn btn-dark mt-3 mb-3' %></div>
     <h5 class="text-center mt-3 mb-3">Youtubeで音楽を探す</h5>
     <div class="youtube">
       <a href="https://www.youtube.com" target="_blank"><%= image_tag 'youtube_social_icon_red.png'%></a>

@@ -68,6 +68,10 @@ nav a:hover{
   padding: 50px 100px;
   border-radius: 8px;
 }
+.button-search{
+  background-color: #2e3740;
+  color: white;
+}
 
 
 
@@ -147,6 +151,10 @@ nav a:hover{
     width: 110px;
     height: 110px;
   }
+  /*search*/
+  .search-content{
+    display: block;
+  }
 }
 
 @media (min-width: 750px) {
@@ -208,6 +216,10 @@ nav a:hover{
   .follow-img{
     width: 150px;
     height: 150px;
+  }
+  /*search*/
+  .search-content{
+    display: flex;
   }
 }
 
