@@ -1,5 +1,17 @@
 {
   "name": "m_share",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "5.1.1",
+    "axios": "^0.19.2",
+    "element-ui": "^2.13.1",
+    "rails-ujs": "^5.2.4-2",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "webpack-dev-server": "^3.10.3"
+  }
 }

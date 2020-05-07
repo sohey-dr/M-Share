@@ -27,26 +27,17 @@
 <div>
   <div class="line"></div>
   <div class="in-line">
-    <div class="fav">
-      <%= @count_favorites %>いいね
+    <div id="favorite">
+      <%= render partial: 'layouts/favorite', locals: { share: @share } %>
     </div>
     <div>
-     
+       
       <% if current_user == @share.user %>
         <%= link_to @share, data: { confirm: "本当に削除しますか?" }, :method => :delete do %>
         <i class="fas fa-trash-alt"></i>
         <% end %>
       <% end %>
       
-      <% if current_user.favorite?(@share) %>
-        <%= link_to share_favorite_path(@share), method: :delete do %>
-        <i class="fas fa-heart"></i>
-        <% end %>
-      <% else %>
-        <%= link_to share_favorites_path(@share), method: :post do %>
-        <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
 
       <a href="http://twitter.com/share?text=私が今聴いている音楽はこれです！" target="_blank" class="twitter-share-button">
        <i class="fab fa-twitter"></i>

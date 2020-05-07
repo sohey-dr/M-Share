@@ -66,3 +66,5 @@ gem "actionview", ">= 5.2.4.2"
 gem 'rails-i18n'
 gem 'rspotify'
 gem 'dotenv-rails'
+gem 'webpacker', github: 'rails/webpacker'
+gem 'jquery-rails'

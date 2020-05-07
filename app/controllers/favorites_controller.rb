@@ -1,17 +1,14 @@
 class FavoritesController < ApplicationController
-  before_action :require_user_logged_in
 
   def create
-    share = Share.find(params[:share_id])
-    current_user.favorite(share)
-    flash[:success] = 'シェアをお気に入りしました。'
-    redirect_to share_url(share)
+    @share = Share.find(params[:share_id])
+    favorite = current_user.favorites.build(share_id: params[:share_id])
+    favorite.save
   end
 
   def destroy
-    share = Share.find(params[:share_id])
-    current_user.unfavorite(share)
-    flash[:success] = 'シェアのお気に入りを解除しました。'
-    redirect_to share_url(share)
+    @share = Share.find(params[:share_id])
+    favorite = Favorite.find_by(share_id: params[:share_id], user_id: current_user.id)
+    favorite.destroy
   end
 end

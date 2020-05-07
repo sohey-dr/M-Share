@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  
-  get 'favorites/create'
-  get 'favorites/destroy'
+
   root to: 'toppages#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  
+  resources :likes, only: [:new ,:create, :destroy, :show]
+  resources :comments, only: [:destroy]
+  resources :relationships, only: [:create, :destroy]
+  
+  resources :shares, only: [:new ,:create, :destroy, :show] do
+    resources :comments, only: [:create]
+    resources :favorites, only: [:create ,:destroy]
+  end
   
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create, :edit, :update] do
@@ -21,13 +28,7 @@ Rails.application.routes.draw do
     collection {get "search"}
   end
   
-  resources :likes, only: [:new ,:create, :destroy, :show]
-  
-  resources :shares, only: [:new ,:create, :destroy, :show] do
-    resources :comments, only: [:create]
-    resources :favorites, only: [:create ,:destroy]
-  end
-  resources :comments, only: [:destroy]
-  
-  resources :relationships, only: [:create, :destroy]
+  post '/shares/:share_id/favorites' => "favorites#create"
+  delete '/shares/:share_id/favorites' => "favorites#destroy"
+ 
 end
