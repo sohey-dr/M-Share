@@ -4,6 +4,7 @@
   <%= form.text_field :search , class:'col-7'%>
   <%= form.submit '検索', name: nil , class:'col-7 mt-2 button-search'%>
   <% end %>
+  <p class="col-7 explanation">※視聴できる曲がない場合がございます</p>
 </div>
 
 <h1 class="text-center mt-5 mb-2">検索結果</h1>
@@ -20,9 +21,7 @@
         </div>
         <div class="col-12 col-md-6 search-sent">
           <h3><%= searchartist.name %></h3>
-          <% if searchartist.images.any?%>
-            <a target="_blank" href="<%= searchartist.top_tracks(:US).first.preview_url %>">人気な曲を視聴</a>
-          <% end %>
+            <audio controls type="audio/x-wav" src="<%= searchartist.top_tracks(:US).first.preview_url %>"></audio>
         </div>
       </div>
     <% end %>
